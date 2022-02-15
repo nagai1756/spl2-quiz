@@ -1,0 +1,15 @@
+<div class="result-message">
+  <p>お疲れ様でした！</p>
+  <p>結果、{{quesCount}}問中、{{correctCount}}問正解！</p>
+</div>
+<p class="result">〜〜リザルト〜〜</p>
+
+<ul *ngFor="let item of items" class="result-detail">
+  <li>第{{item[0]}}問</li>
+  <li>ブキ種:{{item[1]}}</li>
+  <li>サブ:{{item[2]}}</li>
+  <li>スペシャル:{{item[3]}}</li>
+  <li>答え:{{item[4]}}</li>
+  <li>あなたの回答:{{item[5]}}</li>
+  <li>{{item[6]}}</li>
+</ul>

@@ -1,0 +1,55 @@
+<spl-quiz-header></spl-quiz-header>
+<div class="quiz-body">
+  <p class="question">第{{quesCount}}問</p>
+  <form [formGroup]="weaponInfo">
+    <table class="weapon-table">
+      <tbody>
+        <tr>
+          <td>
+            <label class="weapon-ques" for="weaponType">ブキ種</label>
+          </td>
+          <td class="weapon-info">
+            <input class="info" id="weaponType" type="text" formControlName="weaponType" readonly>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label class="weapon-ques" for="subWeaponType">サブ</label>
+          </td>
+          <td class="weapon-info">
+            <input class="info" id="subWeapon" type="text" formControlName="subWeapon" readonly>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label class="weapon-ques" for="specialWeapon">スペシャルウェポン</label>
+          </td>
+          <td class="weapon-info">
+            <input class="info" id="specialWeapon" type="text" formControlName="specialWeapon" readonly>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+<div>
+  <p class="answer-guide">↓↓回答をクリック↓↓</p>
+</div>
+<form [formGroup]="Buttons">
+  <div>
+    <input id="select-1" type="button" class="button btn btn-primary" formControlName="selector1" (click)="goToNext(template,$event)">
+    <input id="select-2" type="button" class="button btn btn-info" formControlName="selector2" (click)="goToNext(template,$event)">
+  </div>
+  <div>
+    <input id="select-3" type="button" class="button btn btn-success" formControlName="selector3" (click)="goToNext(template,$event)">
+    <input id="select-4" type="button" class="button btn btn-warning" formControlName="selector4" (click)="goToNext(template,$event)">
+  </div>
+</form>
+</div>
+<button class="goToResultButton" routerLink="/result-page">リザルト画面へ</button>
+
+<ng-template #template class="dialog-box">
+  <div>
+  <p class="dialog">{{dialog_text}}</p>
+  <p class="failText">{{failText}}</p>
+  </div>
+</ng-template>
